@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.open-meteo.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://api.open-meteo.com;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Watering Widget</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="widget">
+    <div class="drag-zone"></div>
+
+    <nav class="controls">
+      <button id="pinBtn" title="Pin / unpin">📌</button>
+      <button id="minBtn" title="Minimize">–</button>
+      <button id="closeBtn" title="Close">×</button>
+    </nav>
+
+    <section class="top">
+      <div class="weather">
+        <div class="sun"></div>
+        <div class="cloud"></div>
+      </div>
+      <div>
+        <strong id="topTemp">—°C</strong>
+        <span id="weatherSummary">Checking sky...</span>
+        <small id="locationText">Manual coordinates</small>
+      </div>
+    </section>
+
+    <section class="hero">
+      <img id="plantImg" src="assets/plant-happy.svg" alt="Cute potted plant" />
+      <div class="status">
+        <p>PLANT STATUS</p>
+        <h1 id="stateTitle">Checking...</h1>
+        <span id="advice">Asking the sky if your plant needs water.</span>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article>
+        <span>💧</span>
+        <small>RAIN</small>
+        <strong id="rainValue">—</strong>
+      </article>
+      <article>
+        <span>🌡️</span>
+        <small>TEMP</small>
+        <strong id="tempValue">—</strong>
+      </article>
+      <article>
+        <span>💦</span>
+        <small>HUMIDITY</small>
+        <strong id="humidityValue">—</strong>
+      </article>
+    </section>
+
+    <section class="advice-card">
+      <span>🪴</span>
+      <div>
+        <small>WATERING ADVICE</small>
+        <strong id="wateringAdvice">Checking plant signal...</strong>
+        <p id="wateringDetail">Weather signal pending.</p>
+      </div>
+    </section>
+
+    <section class="coords">
+      <input id="latInput" type="number" step="0.0001" value="48.6300" aria-label="Latitude" />
+      <input id="lonInput" type="number" step="0.0001" value="-2.2600" aria-label="Longitude" />
+    </section>
+
+    <footer>
+      <button id="geoBtn">📍 Location</button>
+      <span id="updatedAt">—</span>
+      <button id="refreshBtn">↻ Refresh</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

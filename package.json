@@ -1,0 +1,22 @@
+{
+  "name": "plant-watering-widget",
+  "version": "0.3.0",
+  "description": "A compact Electron plant watering widget using local weather data.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "desktop-widget",
+    "weather",
+    "plants",
+    "open-meteo",
+    "javascript"
+  ],
+  "author": "Sabrina Palis",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^25.0.0"
+  }
+}
